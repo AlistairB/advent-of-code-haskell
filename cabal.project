@@ -6,4 +6,4 @@ with-compiler: ghc-8.10.2
 source-repository-package
   type: git
   location: https://github.com/AlistairB/base-noprelude.git
-  tag: 01bc62a5784df6156bffa3d0ff8beec89d823684
+  tag: 330a3d21d021169d391843cbaf2da6fe7dc9f08e
