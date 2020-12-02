@@ -28,7 +28,7 @@ module Prelude
 where
 
 import Control.Lens (Fold, anyOf, filtered, filteredBy, folded, folding, has, ix, lengthOf, maximumOf, only, sequenceAOf, to, traversed, (%~), (.~), (?~), (^.), (^..), (^?), _2, _Just, _Left, _Right, _head)
-import Data.Text (cons, isSuffixOf, pack, splitOn, toLower, unpack, lines)
+import Data.Text (cons, isSuffixOf, pack, splitOn, toLower, unpack)
 import Data.Time
 import Data.Traversable (for)
 import Relude.Applicative
@@ -50,5 +50,5 @@ import Relude.Monad.Trans (hoistEither, hoistMaybe)
 import Relude.Monoid
 import Relude.Numeric
 import Relude.Print
-import Relude.String (String)
+import Relude.String
 import Relude.File

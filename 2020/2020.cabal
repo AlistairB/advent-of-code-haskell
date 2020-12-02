@@ -32,8 +32,8 @@ library
     TypeApplications
     TypeFamilies
     LambdaCase
+    OverloadedStrings
   build-depends:
-    base-noprelude,
     common,
     ghcid,
     text
