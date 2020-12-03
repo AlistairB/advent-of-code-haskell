@@ -23,6 +23,7 @@ library
     Prelude
     Common.Model.Year
     Common.Operation.DataLoad
+    Common.Megaparsec
 
   default-language: Haskell2010
   default-extensions:
@@ -41,4 +42,5 @@ library
     text,
     relude,
     lens,
+    generic-lens,
     megaparsec

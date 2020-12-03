@@ -24,6 +24,7 @@ module Prelude
     module Relude.Monad.Trans,
     module Data.Traversable,
     module Relude.Extra.Tuple,
+    module Data.Generics.Labels,
   )
 where
 
@@ -52,3 +53,4 @@ import Relude.Numeric
 import Relude.Print
 import Relude.String
 import Relude.File
+import Data.Generics.Labels
