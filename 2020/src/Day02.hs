@@ -38,7 +38,7 @@ produceResult theList =
   let maybeParsedPasswords = for theList parseUnvalidatedPassword
   in
     maybeParsedPasswords <&>
-      length . filter (== True) . fmap validatePassword
+      length . filter (== True) . fmap validatePassword2
 
 
 validatePassword :: UnvalidatedPassword -> Bool
@@ -52,7 +52,18 @@ validatePassword up =
   in
     numRequiredChar >= atLeast && numRequiredChar <= atMost
 
-
+validatePassword2 :: UnvalidatedPassword -> Bool
+validatePassword2 up =
+  let vr = up ^. #_validationRule
+      password = up ^. #_password
+      requiredChar = vr ^. #_requiredChar
+      firstPosition = vr ^. #_atLeast
+      secondPosition = vr ^. #_atMost
+      firstPosChar = T.index password (firstPosition - 1)
+      secondPosChar = T.index password (secondPosition - 1)
+  in
+    (firstPosChar == requiredChar && secondPosChar /= requiredChar) ||
+    (firstPosChar /= requiredChar && secondPosChar == requiredChar)
 
 parseUnvalidatedPassword :: Text -> Maybe UnvalidatedPassword
 parseUnvalidatedPassword = mParseMaybe parserUnvalidatedPassword
@@ -68,7 +79,6 @@ parserUnvalidatedPassword = do
       { _validationRule = validationRule,
         _password = password
       }
-
 
 -- 6-8 s
 parserValidationRule :: MParser ValidationRule
