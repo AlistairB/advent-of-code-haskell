@@ -36,4 +36,5 @@ library
   build-depends:
     common,
     ghcid,
-    text
+    text,
+    megaparsec

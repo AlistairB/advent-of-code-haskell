@@ -40,4 +40,5 @@ library
     time,
     text,
     relude,
-    lens
+    lens,
+    megaparsec
